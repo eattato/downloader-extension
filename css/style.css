@@ -1,14 +1,50 @@
 * {
   margin: 0;
   padding: 0;
-  color: white;
+  color: black;
 }
 
 .popup {
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 150px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 7px 0;
+  margin-left: 10px;
+  height: 20px;
+}
+
+.input_frame {
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.input_url {
+  width: 360px;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 10px;
+  background-color: ghostwhite;
+  border: 1px solid lightgray;
   border-radius: 10px;
+}
+
+.input_download {
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: #111115;
 }

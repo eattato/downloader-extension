@@ -10,9 +10,8 @@
     "service_worker": "js/background.js"
   },
   "permissions": ["downloads", "declarativeContent", "notifications", "tabs"],
-  "browser_action": {
+  "action": {
     "default_icon": "128.png",
     "default_popup": "popup.html"
-  },
-  "action": {}
+  }
 }
