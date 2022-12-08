@@ -2,13 +2,14 @@
   margin: 0;
   padding: 0;
   color: black;
+  box-sizing: border-box;
 }
 
 .popup {
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 150px;
+  height: 350px;
 }
 
 .title {
@@ -47,4 +48,119 @@
   border: 1px solid gray;
   border-radius: 10px;
   background-color: #111115;
+}
+
+.input_download:hover {
+  background-color: #37373f;
+}
+
+.download_list {
+  width: 480px;
+  height: 240px;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #c8c8c8;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1d1d1d;
+}
+
+.download {
+  display: flex;
+  align-items: center;
+  width: 480px;
+  height: 40px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+.download:hover {
+  background-color: ghostwhite;
+}
+
+.download_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.download_icon_frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: ghostwhite;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.download_icon_frame img {
+  width: 30px;
+}
+
+.download_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 440px;
+  height: 40px;
+}
+
+.download_info {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  height: 30px;
+}
+
+.download_name {
+  font-size: 12px;
+  height: 15px;
+}
+
+.download_path {
+  font-size: 10px;
+  height: 15px;
+  margin-left: 5px;
+  color: lightgray;
+}
+
+.download_progress {
+  display: flex;
+  width: 430px;
+  height: 7px;
+  margin-bottom: 3px;
+  background-color: lightgray;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.download_subprogress {
+  display: flex;
+  height: 7px;
+  border-right: 1px solid gray;
+}
+
+.download_bar {
+  height: 7px;
+  background-color: rgb(144, 170, 224);
 }
