@@ -81,12 +81,24 @@
 }
 
 .download {
+  position: relative;
   display: flex;
   align-items: center;
   width: 480px;
   height: 40px;
   background-color: white;
   border-bottom: 1px solid lightgray;
+}
+
+.download_cancel {
+  position: absolute;
+  text-align: center;
+  line-height: 15px;
+  font-size: 14px;
+  color: red;
+  right: 15px;
+  top: 0px;
+  cursor: pointer;
 }
 
 .download:hover {
