@@ -23,8 +23,12 @@ chrome.downloads.onCreated.addListener((rawItem) => {
     let data = {
       name: directory[directory.length - 1],
       path: directory.join("/"),
+      icon: "",
       progress: [],
     };
+    chrome.downloads.getFileIcon(id).then((icon) => {
+      console.log(icon);
+    });
 
     let splitCount = 6;
     let totalSize = item.fileSize;
