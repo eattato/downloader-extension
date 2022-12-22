@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
   };
 
   // background.js와 통신
-  chrome.runtime.onMessage.onDeterminingFilename((msg) => {
+  chrome.runtime.onMessage.addListener((msg) => {
     if (msg.act == "data") {
       applyData(msg.param);
     }

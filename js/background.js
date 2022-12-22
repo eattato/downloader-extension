@@ -18,37 +18,35 @@ chrome.downloads.onCreated.addListener((rawItem) => {
   console.log(id);
 
   // 조회해야 정확한 값이 나옴!
-  chrome.downloads.search({ id: id }).then((item) => {
-    console.log(item["finalUrl"]);
-    console.log(item["exists"]);
-    console.log(item);
-    // let directory = item.finalUrl.split("/");
-    // let data = {
-    //   name: directory[directory.length - 1],
-    //   path: directory.join("/"),
-    //   progress: [],
-    // };
+  chrome.downloads.search({ id: id }).then((items) => {
+    let item = items[0];
+    let directory = item.finalUrl.split("/");
+    let data = {
+      name: directory[directory.length - 1],
+      path: directory.join("/"),
+      progress: [],
+    };
 
-    // let splitCount = 6;
-    // let totalSize = item.fileSize;
-    // for (let ind = 1; ind <= 6; ind++) {
-    //   let progressData = {
-    //     current: 0,
-    //     max: totalSize / splitCount,
-    //   };
-    //   data.progress.push(progressData);
-    // }
-    // downloadDatas.push(data);
-    // console.log("downloading " + item.finalUrl);
+    let splitCount = 6;
+    let totalSize = item.fileSize;
+    for (let ind = 1; ind <= 6; ind++) {
+      let progressData = {
+        current: 0,
+        max: totalSize / splitCount,
+      };
+      data.progress.push(progressData);
+    }
+    downloadDatas.push(data);
+    console.log("downloading " + item.finalUrl);
 
-    // chrome.runtime.sendMessage({
-    //   act: "data",
-    //   param: downloadDatas,
-    // });
+    chrome.runtime.sendMessage({
+      act: "data",
+      param: downloadDatas,
+    });
   });
 });
 
 chrome.downloads.onChanged.addListener((rawItem) => {
   let id = rawItem.id;
-  console.log(rawItem);
+  // console.log(rawItem);
 });
