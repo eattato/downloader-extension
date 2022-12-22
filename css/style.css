@@ -145,6 +145,8 @@
   flex-direction: column;
   width: 440px;
   height: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .download_name {

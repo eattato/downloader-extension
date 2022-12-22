@@ -15,7 +15,6 @@ chrome.runtime.onMessage.addListener((msg) => {
 // 다운로드 시작 시
 chrome.downloads.onCreated.addListener((rawItem) => {
   let id = rawItem.id;
-  console.log(id);
 
   // 조회해야 정확한 값이 나옴!
   chrome.downloads.search({ id: id }).then((items) => {
