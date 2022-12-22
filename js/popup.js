@@ -27,11 +27,12 @@ window.addEventListener("load", function () {
         });
         progressList.append(threadElement);
       }
+      dlList.append(fileElement);
     }
   };
 
   // background.js와 통신
-  chrome.runtime.onMessage.addListener((msg) => {
+  chrome.runtime.onMessage.onDeterminingFilename((msg) => {
     if (msg.act == "data") {
       applyData(msg.param);
     }
