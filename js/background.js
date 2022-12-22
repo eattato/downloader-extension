@@ -22,29 +22,29 @@ chrome.downloads.onCreated.addListener((rawItem) => {
     console.log(item["finalUrl"]);
     console.log(item["exists"]);
     console.log(item);
-    let directory = item.finalUrl.split("/");
-    let data = {
-      name: directory[directory.length - 1],
-      path: directory.join("/"),
-      progress: [],
-    };
+    // let directory = item.finalUrl.split("/");
+    // let data = {
+    //   name: directory[directory.length - 1],
+    //   path: directory.join("/"),
+    //   progress: [],
+    // };
 
-    let splitCount = 6;
-    let totalSize = item.fileSize;
-    for (let ind = 1; ind <= 6; ind++) {
-      let progressData = {
-        current: 0,
-        max: totalSize / splitCount,
-      };
-      data.progress.push(progressData);
-    }
-    downloadDatas.push(data);
-    console.log("downloading " + item.finalUrl);
+    // let splitCount = 6;
+    // let totalSize = item.fileSize;
+    // for (let ind = 1; ind <= 6; ind++) {
+    //   let progressData = {
+    //     current: 0,
+    //     max: totalSize / splitCount,
+    //   };
+    //   data.progress.push(progressData);
+    // }
+    // downloadDatas.push(data);
+    // console.log("downloading " + item.finalUrl);
 
-    chrome.runtime.sendMessage({
-      act: "data",
-      param: downloadDatas,
-    });
+    // chrome.runtime.sendMessage({
+    //   act: "data",
+    //   param: downloadDatas,
+    // });
   });
 });
 
